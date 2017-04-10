@@ -1,0 +1,334 @@
+Katie Krieger
+4/10/17
+
+
+Functions Basics
+https://www.rithmschool.com/courses/javascript/javascript-functions-functions-basic
+
+function myName() {
+	var fullName = "Katie Krieger";
+	console.log(fullName);
+}
+
+var favoriteFoods = ["pizza", "ice cream"];
+function randomFood() {
+	var randomIndex = Math.floor(Math.random() * favoriteFoods.length);
+	console.log(favoriteFoods[randomIndex]);
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function displayOddNumbers() {
+	for(i=0; i<numbers.length; i++) {
+		if(numbers[i] % 2 !== 0) {
+			console.log(numbers[i])
+		}
+	}
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function displayEvenNumbers() {
+	for(i=0; i<numbers.length; i++) {
+		if(numbers[i] % 2 === 0) {
+			console.log(numbers[i])
+		}
+	}
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function returnFirstOddNumber() {
+	for(i=0; i<numbers.length; i++) {
+		if(numbers[i] % 2 !== 0) {
+			return numbers[i];
+		}
+	}
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function returnFirstEvenNumber() {
+	for(i=0; i<numbers.length; i++) {
+		if(numbers[i] % 2 === 0) {
+			return numbers[i];
+		}
+	}
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function returnFirstHalf() {
+	return numbers.splice(0,numbers.length/2);
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function returnSecondHalf() {
+	return numbers.splice(numbers.length/2);
+}
+
+
+Function Parameters and Scope Exercises
+https://www.rithmschool.com/courses/javascript/javascript-functions-parameters-and-scope
+
+function add(num1, num2) {
+	return num1+num2;
+}
+
+function subtract(num1, num2) {
+	return num1-num2;
+}
+
+function multiply(num1, num2) {
+	return num1*num2;
+}
+
+function divide(num1, num2) {
+	return num1/num2;
+}
+
+function sayHello(str) {
+	if(str==="Katie") {
+		return "Hello Boss";
+	}
+	return "Hello " + str;
+}
+
+function average(arr) {
+	var sum = 0;
+	for(var i=0; i<arr.length; i++) {
+		sum += arr[i];
+	}
+	return sum/arr.length;
+}
+
+function createStudent(first, last) {
+	return {
+		firstName: first,
+		lastName: last
+	}
+}
+
+var tim = createStudent("Tim", "Garcia");
+var matt = createStudent("Matt", "Lane");
+var elie = createStudent("Elie", "Schoppik");
+var students = [tim, matt, elie];
+
+function findStudentByFirstName(first) {
+	first = first.toLowerCase();
+	for(var i=0; i<students.length; i++) {
+		if(students[i].firstName.toLowerCase() === first) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function extractEveryThird(arr) {
+	thirds = [];
+	for(var i=2; i<arr.length + 1; i+= 3) {
+		thirds.push(arr[i]);
+	}
+	return thirds;
+}
+
+function countEvensAndOdds(arr) {
+	var obj = {
+		oddCount: 0,
+		evenCount: 0
+	};
+	for(var i=0; i<arr.length; i++) {
+		if(arr[i] % 2 === 0) {
+			obj.evenCount++;
+		} else {
+		obj.oddCount++;
+		}
+	}
+	return obj;
+}
+
+Hello from global
+Hello from global
+
+function onlyCapitalLetters(str) {
+	var strArr = str.split("");
+	var lowerArr = str.toLowerCase().split("");
+	var CapArr = [];
+	for(var i=0; i<str.length; i++) {
+		if (strArr[i] !== lowerArr[i]) {
+			CapArr.push(strArr[i]);
+		}
+	}
+	return CapArr.join("");
+}
+
+
+Anonymous Functions and IIFEs Exercises
+https://www.rithmschool.com/courses/javascript/javascript-functions-anonymous-functions-and-iifes
+
+(function displayFullName(firstName, lastName) {
+	return firstName + " " + lastName;
+})("Katie", "Krieger");
+
+
+var calc = (function createCalculator() {
+	return {
+		add: function(num1, num2) {
+			return num1 + num2;
+		},
+		subtract: function(num1, num2) {
+			return num1 - num2;
+		},
+		multiply: function(num1, num2) {
+			return num1 * num2;
+		},
+		divide: function(num1, num2) {
+			return num1 / num2;
+		}
+	};
+})();
+
+
+Hoisting Exercises
+https://www.rithmschool.com/courses/javascript/javascript-functions-hoisting
+
+1. Tim. Inside the function, firstName is assigned before being returned. firstName is not logged to the console anywhere outside of the function, but the function is called, which will return Tim.
+2. Reference error because firstName is not defined. FirstName is only defined in the function displayFirstName scope since the var keyword was used inside the function when it was assigned.
+3. undefined. Because although the variable firstName was declared, it was not yet assigned.
+4. A reference error since the var keyword was not used to assign the firstName variable, which means it was not yet declared in the global scope (i.e., not hoisted).
+5. Hi undefined. Because firstName was not yet defined in the function scope, even though it was already declared due to hoisting.
+6. A reference error since the var keyword was not used to assign the firstName variable, which means it was not yet declared in the function scope.
+7. Hi! because you can call a function before it's declared since function delcarations are fully defined before the code is run.
+8. Type Error: sayHi is not a function. Because the variable sayHi has not yet been defined even though it exists in memory.
+
+
+
+Functions Exercises
+https://www.rithmschool.com/courses/javascript/javascript-functions-exercises
+
+Part 1
+
+function difference(a,b) {
+	return a-b;
+}
+
+function product(a,b) {
+	return a*b;
+}
+
+function printDay(num) {
+	switch(num){
+		case 1:
+			return "Sunday";
+		case 2:
+			return "Monday";
+		case 3:
+			return "Tuesday";
+		case 4:
+			return "Wednesday";
+		case 5:
+			return "Thursday";
+		case 6:
+			return "Friday";
+		case 7:
+			return "Saturday";
+		default:
+			return undefined;
+	}
+}
+
+function lastElement(arr) {
+	return arr[length-1];
+}
+
+function numberCompare(a,b) {
+	if (a===b) {
+		return "Numbers are equal";
+	} else if (a < b) {
+		return "Second is greater";
+	}
+	return "First is greater";
+}
+
+function singleLetterCount(word,letter) {
+	var counter = 0;
+	for (var i=0; i<word.length; i++) {
+		if(word[i].toLowerCase() === letter.toLowerCase()) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+
+Part 2
+
+function multipleLetterCount(str) {
+	var obj = {};
+	for (var i=0; i<str.length; i++){
+		if(str[i] in obj){
+			obj[str[i]]++;
+		} else {
+			obj[str[i]] = 1;
+		}
+	}
+	return obj;
+}
+
+function arrayManipulation(arr,cmd,loc,val) {
+	if(cmd === "remove") {
+		if(loc === "end") {
+			return arr.pop();
+		}
+		return arr.shift();
+	} else if(cmd === "add") {
+		if(loc === "end") {
+			arr.push(val);
+			return arr;
+		} 
+		arr.unshift(value);
+		return arr;
+	}
+}
+
+function isPalindrome(str) {
+	var str2 = str.toLowerCase().split(" ").join("");
+	for (var i=0; i<str2.length/2; i++) {
+		if (str2[i] === str2[str2.length-1-i]) {
+		} else {
+		return false;
+		}
+	}
+	return true;
+}
+
+
+Part 3
+
+
+function game() {
+
+	var userChoice = prompt("Pick rock, paper, or scissors").toLowerCase();
+
+	var randomNumber = Math.random();
+	if (randomNumber < 1/3) {
+	  	var computerChoice = "rock";
+	} else if (randomNumber < 2/3) {
+	  	var computerChoice = "paper";
+	} else {
+	  	var computerChoice = "scissors";
+	}
+
+	if(userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
+	  console.log("You picked an invalid option :(")
+	} else {
+	  	console.log("Computer chose", computerChoice)
+	  	console.log("User chose", userChoice)
+	  	if(computerChoice === userChoice) {
+	    	console.log("Tie!")
+	  	} else if (userChoice === "rock" || computerChoice == "paper") {
+	  		console.log("You lose!");
+	  	} else if (userChoice === "scissors" || computerChoice == "rock") {
+	  		console.log("You lose!");
+	  	} else if (userChoice === "paper" || computerChoice == "scissors") {
+	  		console.log("You lose!");
+	  	} else {
+			console.log("You win!");
+		}
+	}
+}

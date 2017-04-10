@@ -1,0 +1,65 @@
+Katie Krieger
+4/10/17
+
+
+Array Basics
+https://www.rithmschool.com/courses/javascript/javascript-arrays-array-basics
+1. var favoriteFoods = ["ice cream", "bagels", "soup"];
+2. favoriteFoods[1];
+3. favoriteFoods[3] = "chocolate";
+4. var formerFavoriteFood = favoriteFoods.shift();
+5. favoriteFoods.push("pizza");
+6. favoriteFoods.unshift("milk");
+7. When you try to pop from an empty array, you get undefined.
+8a. array.splice(1,1);
+8b. array.splice(1,0,"beta");
+8c. array.splice(1,3,9,8,7,6,5,4,3);
+
+
+Array Methods
+https://www.rithmschool.com/courses/javascript/javascript-arrays-array-methods
+
+Part 1
+var arr = [];
+arr.push("Katie");
+arr.push("Krieger");
+arr.unshift("green");
+arr.shift();
+var arr2 = [];
+arr2.push(36);
+arr2.push("JavaScript");
+arr2.indexOf(42); (this returns -1 since 42 is not in my arr2)
+var combinedArr = arr.concat(arr2);
+
+Part 2
+1. arr.splice(1,2);
+2. arr.concat("Haskell", "Clojure");
+3. arr.join(", ");
+4. Primitives are passed by value, which means that when you assign a new variable to an existing variable, the two variables can operate independently. Objects, including arrays, are passed by reference, which means that when you assign a new variable to an exiting one, the new variable is pointing at the original one, and both variables refer to the exact same value. If you change one, both are changed.
+
+
+Array Exercises
+https://www.rithmschool.com/courses/javascript/javascript-arrays-exercise
+
+var people = ["Greg", "Mary", "Devon", "James"];
+1. 
+for(var i=0; i < people.length; i++) {
+	console.log(people[i]);
+}
+2. people.shift();
+3. people.pop();
+4. people.unshift("Matt");
+5. people.push("Katie");
+6. 
+for(var i=0; i < people.length; i++) {
+	if(i > 1) {
+		break;
+	}
+	console.log(people[i]);
+}
+7. people.slice(2);
+8. people.indexOf("Mary");
+9. people.indexOf("Foo");
+10. 
+people.splice(2,1,"Elizabeth","Artie");
+11. var withBob = people.concat("Bob");

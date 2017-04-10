@@ -1,0 +1,78 @@
+Katie Krieger
+4/7/17
+
+
+JavaScript History and Setup
+https://www.rithmschool.com/courses/javascript/introduction-to-javascript-intro
+1. ECMAScript is a standard, and JavaScript is an implementation of that standard.
+2. Brendan Eich is the creator of JavaScript.
+3. Option + command + j on a Mac, or right click on a web page, select Inspect and then the Console tab.
+4. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var katie = "learning JavaScript";
+		var rithm = "teaching JavaScript";
+		console.log(katie);
+		console.log(rithm);
+	</script>
+</body>
+</html>
+5. Prompt allows you to have the user define a variable by prompting them with some text. Example: var name = prompt("Enter your name: ").
+Confirm allows you to get user confirmation through a dialog box, and assigns a boolean value to a variable according to whether the user says OK (which returns true) or Cancel (which returns false). Example: var pref = confirm("Do you want to proceed?").
+
+
+Variables and Primitives Exercises
+https://www.rithmschool.com/courses/javascript/introduction-to-javascript-variables-and-primitives
+
+1. 
+var name = "Katie";
+var dateOfBirth = 19;
+2. If you have multiple variables of the same name, the last one assigned takes precedence.
+3. 
+var favColor = prompt("What is your favorite color?");
+console.log("Your favorite color is ",favColor,"!");
+4. var quote = '"I haven\'t exercised yet today," she said';
+5. null is an intentional absence of data, whereas undefined is a variable that has been created but not yet assigned.
+6. NaN is shorthand for not a number. typeof(NaN) is number.
+7. undefined
+
+
+Boolean Logic Exercises
+https://www.rithmschool.com/courses/javascript/introduction-to-javascript-boolean-exercises
+
+Part 1
+1. true
+2. true
+3. 1
+4. true
+5. false
+6. true
+7. true
+
+
+Part 2
+1. Keep it up!
+2. Inside of an if statement, the value (isLearning) will be forced to a Boolean. Since isLearning was assigned to true (a truthy value), this will always be true, and we don't need a comparison operator.
+
+1. third. firstVariable and secondVariable are both falsey values (undefined and ""), so their values inside the conditional statements are false. But thirdVariable is true. Since an || (or) operator is true when evaluating true || false, "third" is printed.
+2. Undefined
+3. No, undefined is a falsey
+4. No, "" is a falsey
+5. Yes, 1 is a truthy
+
+
+Part 3
+1. 
+if(Math.random() > 0.5) {
+	console.log("Over 0.5")
+} else {
+	console.log("Under 0.5")
+}
+
+2. A falsey value is not necessarily a boolean but will be coerced to false when evaluated in a boolean expression. The 6 falsey values in JavaScript are 0, "", null, undefined, false, and NaN.

@@ -1,0 +1,66 @@
+Katie Krieger
+4/10/17
+
+
+Object Basics
+https://www.rithmschool.com/courses/javascript/javascript-objects-object-basics
+
+1. 
+obj = {
+	firstName: "Katie",
+	lastName: "Krieger",
+	occupation: "engineer"
+};
+2. 
+obj.firstName;
+obj.lastName;
+obj.occupation;
+obj["firstName"];
+obj["lastName"];
+obj["occupation"];
+3. 
+obj.hobby = "running";
+delete obj.occupation;
+4. The dot notation is preferred whenever possible and takes the form obj.key. The bracket notation is necessary if you need to pass through an expression or a variable to get the key name, and it takes the form obj[key].
+
+
+Object Iteration
+https://www.rithmschool.com/courses/javascript/javascript-objects-iteration
+
+1. 
+for(var keys in namesAndHobbies) {
+	console.log(namesAndHobbies[keys], "=>", keys);
+}
+2. namesAndHobbies.katie = "running";
+3. 
+if("katie" in namesAndHobbies) {
+	console.log(amesAndHobbies[keys], "=>", "katie")
+}
+
+Object Exercises
+https://www.rithmschool.com/courses/javascript/javascript-objects-exercises
+
+var programming = {
+	languages: ["JavaScript", "Python", "Ruby"],
+    isChallenging: true,
+    isRewarding: true,
+    difficulty: 8,
+    jokes: "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke"
+};
+
+1. programming.languages.push("Go");
+2. programming.difficulty = 7;
+3. delete programming.jokes;
+4. programming.isFun = true;
+5. 
+for (var i = 0; i<programming.languages.length; i++) {
+	console.log(programming.languages[i]);
+}
+6. 
+for (var key in programming) {
+	console.log(key);
+}
+7. 
+for (var key in programming) {
+	console.log(programming[key]);
+}
